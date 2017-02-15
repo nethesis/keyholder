@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+        adduser --system --disabled-password --disabled-login --home /var/empty \
+                --no-create-home --quiet --force-badname --group keyholder
+        chown -R keyholder:keyholder /etc/keyholder.d
+        chown -R keyholder:keyholder /etc/keyholder-auth.d
+        chmod 750 /etc/keyholder.d
+        chmod 755 /etc/keyholder-auth.d
+        chmod 444 /etc/keyholder.d/keyholder.conf
+        ;;
+esac
+
+#DEBHELPER#
+
+exit 0

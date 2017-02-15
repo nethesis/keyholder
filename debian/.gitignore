@@ -1,0 +1,6 @@
+files
+keyholder
+*.log
+debhelper*
+*.debhelper
+*.substvars
