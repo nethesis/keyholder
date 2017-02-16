@@ -1,0 +1,3 @@
+bin/keyholder usr/bin
+bin/ssh-agent-proxy usr/bin
+etc/keyholder.conf etc/keyholder.d
