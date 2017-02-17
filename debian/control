@@ -7,8 +7,7 @@ Build-Depends: debhelper (>= 9), python3-all,
 Package: keyholder
 Architecture: any
 Pre-Depends: dpkg (>= 1.16.1), python3, ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}, openssh-client, adduser,
- python3-yaml
+Depends: ${misc:Depends}, openssh-client, adduser, python3-yaml
 Description: ssh agent proxy to securely share one ssh agent and keys.
  keyholder provides a means of allowing a group of trusted
  users to use a shared SSH identity without exposing the identity's
