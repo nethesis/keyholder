@@ -1,7 +1,0 @@
-Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?op=file&rev=135
-Name: keyholder
-Maintainer: Mukunda Modell <mmodell@wikimedia.org>
-Source: https://github.com/wikimedia/keyholder
-
-Copyright: 2015-2017 Wikimedia Foundation and Contributors
-License: Apache-2.0
