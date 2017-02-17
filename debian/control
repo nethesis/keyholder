@@ -3,7 +3,6 @@ Maintainer: Mukunda Modell <mmodell@wikimedia.org>
 Build-Depends: debhelper (>= 9), python3-all,
                lsb-release,
                dh-systemd,
-               ruby-ronn
 
 Package: keyholder
 Architecture: any
