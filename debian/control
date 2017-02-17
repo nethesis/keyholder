@@ -1,5 +1,13 @@
 Source: keyholder
-Maintainer: Mukunda Modell <mmodell@wikimedia.org>
+Maintainer: Wikimedia Foundation Release Engineering <releng@wikimedia.org>
+Uploaders: Tyler Cipriani <tcipriani@wikimedia.org>,
+           Dan Duvall <dduvall@wikimedia.org>,
+           Bryan Davis <bd808@wikimedia.org>,
+           Chad Horohoe <chadh@wikimedia.org>,
+           Mukunda Modell <mmodell@wikimedia.org>,
+           Antoine Musso <hashar@free.fr>,
+Section: admin
+Priority: optional
 Build-Depends: debhelper (>= 9), python3-all,
                lsb-release,
                dh-systemd,
