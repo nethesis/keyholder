@@ -1,5 +1,16 @@
-keyholder (1.0.0) UNRELEASED; urgency=medium
+keyholder (1.0.0-1) UNRELEASED; urgency=medium
 
+  [ Mukunda Modell ]
   * Initial release.
+  * Initial import of keyholder, derived from wikimedia operations/puppet
 
- -- Mukunda Modell <mmodell@wikimedia.org>  Wed, 15 Feb 2017 16:43:43 -0600
+  [ Bryan Davis ]
+  * README formatting
+
+  [ Mukunda Modell ]
+  * remove unused build dependency & add gbp.conf
+  * Moved debian packaging files to a separate branch
+  * remove shlibs:Depends from control
+  * use quilt
+
+ -- Mukunda Modell <mmodell@wikimedia.org>  Fri, 17 Feb 2017 17:39:07 -0600
