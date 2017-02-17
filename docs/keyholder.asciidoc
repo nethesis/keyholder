@@ -1,0 +1,45 @@
+:lang: en
+
+= KEYHOLDER(1)
+:doctype: manpage
+
+== NAME
+
+keyholder - Manage shared SSH agent
+
+== SYNOPSIS
+
+*keyholder* _command_ [options]
+
+== COMMANDS
+
+*keyholder* status::
+    Lists service status and the fingerprints of all identities
+    currently represented by the agent
+
+*keyholder* add _KEY_::
+    Add a private key identity to the agent
+
+*keyholder* arm::
+    Add all keys in /etc/keyholder.d
+
+*keyholder* disarm::
+    Deletes all identities from the agent
+
+*keyholder* [start|stop|restart]::
+    Start / stop / restart the keyholder service
+
+== DESCRIPTION
+
+The keyholder command is used to manage the keyholder-agent and keyholder-proxy.
+
+== SEE ALSO
+ssh-agent-proxy(1)
+
+== RESOURCES
+
+github: <https://github.com/wikimedia/keyholder>
+
+== COPYING
+
+Copyright 2015-2017 by Wikimedia Foundation, Inc and Contributors.
