@@ -1,0 +1,36 @@
+:lang: en
+
+= KEYHOLDER-AUTH(1)
+:doctype: manpage
+
+== NAME
+
+keyholder-auth - ssh key authorizations for keyholder's ssh-agent-proxy.
+
+== DESCRIPTION
+
+Keyholder authorizes users based on unix group membership. To give a certain
+group of users access to one or more of the keyholder-managed ssh keys, you must
+create an authorization yaml file in */etc/keyholder-auth.d/*. An authorization
+file should contain a top level map with unix group names as keys, each mapped
+to a list of the ssh keys which that group is allowed to use.
+
+For each ssh key name you must create a ssh private key *[key-name]* and
+corresponding public key *[key-name].pub* in */etc/keyholder.d/[key-name]*.
+
+IMPORTANT: Key files should be readable only by the keyholder daemon's uid.
+
+== EXAMPLE
+.groups.yaml
+[source,yaml]
+----
+# map unix groups to ssh keys in /etc/keyholder.d:
+---
+users: [users-key]
+admins: [users-key, admins-key]
+----
+
+== SEE ALSO
+keyholder(1), ssh-agent-proxy(1)
+
+include::footer.asciidoc[]

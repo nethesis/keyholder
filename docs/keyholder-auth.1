@@ -1,5 +1,5 @@
 '\" t
-.\"     Title: keyholder
+.\"     Title: keyholder-auth
 .\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
 .\"      Date: 02/17/2017
@@ -7,7 +7,7 @@
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "KEYHOLDER" "1" "02/17/2017" "\ \&" "\ \&"
+.TH "KEYHOLDER\-AUTH" "1" "02/17/2017" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -28,42 +28,48 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
-keyholder \- Manage shared SSH agent
-.SH "SYNOPSIS"
-.sp
-\fBkeyholder\fR \fIcommand\fR [options]
-.SH "COMMANDS"
-.PP
-\fBkeyholder\fR status
-.RS 4
-Lists service status and the fingerprints of all identities currently represented by the agent
-.RE
-.PP
-\fBkeyholder\fR add \fIKEY\fR
-.RS 4
-Add a private key identity to the agent
-.RE
-.PP
-\fBkeyholder\fR arm
-.RS 4
-Add all keys in /etc/keyholder\&.d
-.RE
-.PP
-\fBkeyholder\fR disarm
-.RS 4
-Deletes all identities from the agent
-.RE
-.PP
-\fBkeyholder\fR [start|stop|restart]
-.RS 4
-Start / stop / restart the keyholder service
-.RE
+keyholder-auth \- ssh key authorizations for keyholder\*(Aqs ssh\-agent\-proxy\&.
 .SH "DESCRIPTION"
 .sp
-The keyholder command is used to manage the keyholder\-agent and keyholder\-proxy\&.
+Keyholder authorizes users based on unix group membership\&. To give a certain group of users access to one or more of the keyholder\-managed ssh keys, you must create an authorization yaml file in \fB/etc/keyholder\-auth\&.d/\fR\&. An authorization file should contain a top level map with unix group names as keys, each mapped to a list of the ssh keys which that group is allowed to use\&.
+.sp
+For each ssh key name you must create a ssh private key \fB[key\-name]\fR and corresponding public key \fB[key\-name]\&.pub\fR in \fB/etc/keyholder\&.d/[key\-name]\fR\&.
+.if n \{\
+.sp
+.\}
+.RS 4
+.it 1 an-trap
+.nr an-no-space-flag 1
+.nr an-break-flag 1
+.br
+.ps +1
+\fBImportant\fR
+.ps -1
+.br
+.sp
+Key files should be readable only by the keyholder daemon\(cqs uid\&.
+.sp .5v
+.RE
+.SH "EXAMPLE"
+.PP
+\fBgroups.yaml\fR. 
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+# map unix groups to ssh keys in /etc/keyholder\&.d:
+\-\-\-
+users: [users\-key]
+admins: [users\-key, admins\-key]
+.fi
+.if n \{\
+.RE
+.\}
+.sp
 .SH "SEE ALSO"
 .sp
-ssh\-agent\-proxy(1), keyholder\-auth
+keyholder(1), ssh\-agent\-proxy(1)
 .SH "RESOURCES"
 .sp
 Source: https://phabricator\&.wikimedia\&.org/source/keyholder/
