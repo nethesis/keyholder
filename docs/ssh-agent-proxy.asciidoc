@@ -28,12 +28,6 @@ the requested public key fingerprint.
                   access can be found (default: '/etc/keyholder-auth.d').
 
 == SEE ALSO
-keyholder(1)
+keyholder(1), keyholder-auth(1)
 
-== RESOURCES
-
-github: <https://github.com/wikimedia/keyholder>
-
-== COPYING
-
-Copyright 2015-2017 by Wikimedia Foundation, Inc and Contributors.
+include::footer.asciidoc[]

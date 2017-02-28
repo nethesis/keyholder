@@ -1,0 +1,8 @@
+
+== RESOURCES
+Source: <https://phabricator.wikimedia.org/source/keyholder/>
+
+== COPYING
+Keyholder is licensed under the terms of the Apache License, Version 2.0
+
+Copyright 2015-2017 by Wikimedia Foundation, Inc and Contributors.

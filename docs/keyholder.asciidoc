@@ -34,12 +34,6 @@ keyholder - Manage shared SSH agent
 The keyholder command is used to manage the keyholder-agent and keyholder-proxy.
 
 == SEE ALSO
-ssh-agent-proxy(1)
+ssh-agent-proxy(1), keyholder-auth
 
-== RESOURCES
-
-github: <https://github.com/wikimedia/keyholder>
-
-== COPYING
-
-Copyright 2015-2017 by Wikimedia Foundation, Inc and Contributors.
+include::footer.asciidoc[]

@@ -2,12 +2,12 @@
 .\"     Title: ssh-agent-proxy
 .\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
 .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
-.\"      Date: 02/15/2017
+.\"      Date: 02/17/2017
 .\"    Manual: \ \&
 .\"    Source: \ \&
 .\"  Language: English
 .\"
-.TH "SSH\-AGENT\-PROXY" "1" "02/15/2017" "\ \&" "\ \&"
+.TH "SSH\-AGENT\-PROXY" "1" "02/17/2017" "\ \&" "\ \&"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -44,10 +44,12 @@ Creates a UNIX domain socket that proxies connections to an ssh\-agent(1) socket
 \fB\-\-auth\-dir\fR DIR Directory where YAML files containing group:[key(s)] access can be found (default: \fI/etc/keyholder\-auth\&.d\fR)\&.
 .SH "SEE ALSO"
 .sp
-keyholder(1)
+keyholder(1), keyholder\-auth(1)
 .SH "RESOURCES"
 .sp
-github: https://github\&.com/wikimedia/keyholder
+Source: https://phabricator\&.wikimedia\&.org/source/keyholder/
 .SH "COPYING"
+.sp
+Keyholder is licensed under the terms of the Apache License, Version 2\&.0
 .sp
 Copyright 2015\-2017 by Wikimedia Foundation, Inc and Contributors\&.
