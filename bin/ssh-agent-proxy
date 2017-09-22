@@ -77,6 +77,8 @@ SSH2_AGENTC_SIGN_REQUEST = 13
 SSH_AGENTC_REQUEST_RSA_IDENTITIES = 1
 SSH_AGENT_FAILURE = 5
 SSH_AGENT_OLD_SIGNATURE = 1
+SSH_AGENT_RSA_SHA2_256 = 2
+SSH_AGENT_RSA_SHA2_512 = 4
 
 s_message_header = struct.Struct('!LB')
 s_flags = struct.Struct('!L')
@@ -211,7 +213,9 @@ class SshAgentProxyHandler(socketserver.BaseRequestHandler):
         flags, = s_flags.unpack_from(message, offset)
         if offset + s_flags.size != len(message):
             raise err('SSH2_AGENTC_SIGN_REQUEST: Trailing bytes')
-        if flags != 0 and flags != SSH_AGENT_OLD_SIGNATURE:
+        if (flags != 0 and flags != SSH_AGENT_OLD_SIGNATURE and
+                flags != SSH_AGENT_RSA_SHA2_256 and
+                flags != SSH_AGENT_RSA_SHA2_512):
             raise err('SSH2_AGENTC_SIGN_REQUEST: Bad flags 0x%X' % flags)
         return key_blob, data, flags
 
