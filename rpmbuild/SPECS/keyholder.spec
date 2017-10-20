@@ -1,6 +1,6 @@
 Name:          keyholder
 Version:       1.0.1
-Release:       1
+Release:       2
 URL:           https://phabricator.wikimedia.org/source/keyholder
 License:       ASL 2.0
 Summary:       ssh agent proxy to securely share one ssh agent and keys.
@@ -11,7 +11,7 @@ Requires:      config(keyholder) = %{version}-%{release}
 BuildRequires: systemd
 Requires(pre): shadow-utils
 Requires:      python34 python34-PyYAML
-Source0: https://github.com/nethershaw/%{name}/archive/rpmbuild.tar.gz
+Source0: https://github.com/nethesis/%{name}/archive/rpmbuild.tar.gz
 %prep
 %autosetup -n %{name}-rpmbuild
 %description
@@ -68,5 +68,8 @@ cp -p docs/ssh-agent-proxy.1 %{buildroot}%{_mandir}/man1
 %systemd_postun_with_restart keyholder-agent.service
 
 %changelog
+* Fri Oct 20 2017 Davide Principi <davide.principi@nethesis.it> 1.0.1-2
+- Nethesis rebuild
+
 * Fri Sep 22 2017 Matt Vaughn <nethershaw@gmail.com> 1.0.1-1
 - Initial RPM release
